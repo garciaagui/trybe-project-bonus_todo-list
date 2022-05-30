@@ -1,7 +1,8 @@
 const addTaskInput = document.querySelector('#texto-tarefa');
-const addTaskButton = document.querySelector('#criar-tarefa');
+const addTaskBtn = document.querySelector('#criar-tarefa');
 const taskList = document.querySelector('#lista-tarefas');
-const clearButton = document.querySelector('#apaga-tudo');
+const clearListBtn = document.querySelector('#apaga-tudo');
+const clearCompletedTasksBtn = document.querySelector('#remover-finalizados');
 
 function selectTask(event) {
   const hadClassSelected = document.querySelector('.selected');
@@ -16,7 +17,6 @@ function completeTask(event) {
   const auxiliar = event;
   if (auxiliar.target.classList.contains('completed')) {
     auxiliar.target.classList.remove('completed');
-    console.log('true');
   } else {
     auxiliar.target.classList.add('completed');
   }
@@ -38,5 +38,16 @@ function clearList() {
   }
 }
 
-addTaskButton.addEventListener('click', addNewTask);
-clearButton.addEventListener('click', clearList);
+function clearCompletedTasks() {
+  const createdTasks = document.getElementsByClassName('task');
+  for (let i = 0; i < createdTasks.length; i += 1) {
+    if (createdTasks[i].classList.contains('completed')) {
+      taskList.removeChild(createdTasks[i]);
+      i -= 1;
+    }
+  }
+}
+
+addTaskBtn.addEventListener('click', addNewTask);
+clearListBtn.addEventListener('click', clearList);
+clearCompletedTasksBtn.addEventListener('click', clearCompletedTasks);

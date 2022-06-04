@@ -19,20 +19,20 @@
   </header>
   <main>
     <section>
-      <label for='texto-tarefa'>Adicione um item à lista:</label>
-      <input type='text' name="" id='texto-tarefa'>
-      <button id='criar-tarefa'>Adicionar</button>
+      <label for='texto-tarefa' class="form-label">Adicione um item à lista:</label>
+      <input type='text' name="" id='texto-tarefa' class="form-control">
+      <button id='criar-tarefa' class="btn btn-primary">Adicionar</button>
     </section>
 
     <ol id='lista-tarefas'></ol>
 
     <section id='useful-buttons'> 
-      <button id='apaga-tudo'><i class="fa-solid fa-xmark"></i></button>
-      <button id='remover-finalizados'>Remover Finalizados</button>
-      <button id='salvar-tarefas'>Salvar Lista</button>
-      <button id='mover-cima'>Mover para Cima</button>
-      <button id='mover-baixo'>Mover para Baixo</button>
-      <button id='remover-selecionado'>Remover Tarefa</button>
+      <button id='apaga-tudo' class="btn btn-danger">Apagar Lista</i></button>
+      <button id='remover-finalizados' class="btn btn-primary"><i class="fa-solid fa-check"></i> Remover Finalizadas</button>
+      <button id='salvar-tarefas' class="btn btn-success">Salvar Lista</button>
+      <button id='mover-cima' class="btn btn-warning"><i class="fa-solid fa-circle-up"></i> Selecionada</button>
+      <button id='mover-baixo' class="btn btn-warning"><i class="fa-solid fa-circle-down"></i> Selecionada</button>
+      <button id='remover-selecionado' class="btn btn-warning">Remover Selecionada</i></button>
     </section>
   </main>
   <script src="script.js"></script>

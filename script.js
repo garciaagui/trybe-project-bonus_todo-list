@@ -6,6 +6,7 @@ const clearCompletedTasksBtn = document.querySelector('#remover-finalizados');
 const saveListBtn = document.querySelector('#salvar-tarefas');
 const moveUpBtn = document.querySelector('#mover-cima');
 const moveDownBtn = document.querySelector('#mover-baixo');
+const removeSelectedTaskBtn = document.querySelector('#remover-selecionado');
 
 function selectTask(event) {
   const hadClassSelected = document.querySelector('.selected');
@@ -108,12 +109,21 @@ function moveDownItem() {
     const selectedTaskContent = selectedTask.innerHTML;
     const selectedTaskClasses = selectedTask.className;
     const nextTask = selectedTask.nextElementSibling;
-    const previousTaskContent = nextTask.innerHTML;
-    const previousTaskClasses = nextTask.className;
-    selectedTask.innerHTML = previousTaskContent;
-    selectedTask.className = previousTaskClasses;
+    const nextTaskContent = nextTask.innerHTML;
+    const nextTaskClasses = nextTask.className;
+    selectedTask.innerHTML = nextTaskContent;
+    selectedTask.className = nextTaskClasses;
     nextTask.innerHTML = selectedTaskContent;
     nextTask.className = selectedTaskClasses;
+  }
+}
+
+function removeSelectedTask() {
+  const createdTasks = document.getElementsByClassName('task');
+  for (let i = 0; i < createdTasks.length; i += 1) {
+    if (createdTasks[i].classList.contains('selected')) {
+      taskList.removeChild(createdTasks[i]);
+    }
   }
 }
 
@@ -124,3 +134,4 @@ clearCompletedTasksBtn.addEventListener('click', clearCompletedTasks);
 saveListBtn.addEventListener('click', saveListItems);
 moveUpBtn.addEventListener('click', moveUpItem);
 moveDownBtn.addEventListener('click', moveDownItem);
+removeSelectedTaskBtn.addEventListener('click', removeSelectedTask);

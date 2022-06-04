@@ -4,32 +4,38 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <title>Projeto Lista de Tarefas</title>
 </head>
 <body>
-  <header>Minha Lista de Tarefas</header>
-
+  <header>
+    <h1>
+      Minha Lista de Tarefas
+    </h1>
   <p id='funcionamento'>
     Clique duas vezes em um item para marcá-lo como completo
   </p>
+  </header>
+  <main>
+    <section>
+      <label for='texto-tarefa'>Adicione um item à lista:</label>
+      <input type='text' name="" id='texto-tarefa'>
+      <button id='criar-tarefa'>Adicionar</button>
+    </section>
 
-  <section>
-    <label for='texto-tarefa'>Adicione um item à lista:</label>
-    <input type='text' name="" id='texto-tarefa'>
-    <button id='criar-tarefa'>Adicionar</button>
-  </section>
+    <ol id='lista-tarefas'></ol>
 
-  <ol id='lista-tarefas'></ol>
-
-  <section id='useful-buttons'> 
-    <button id='apaga-tudo'>Limpar Lista</button>
-    <button id='remover-finalizados'>Remover Finalizados</button>
-    <button id='salvar-tarefas'>Salvar Lista</button>
-    <button id='mover-cima'>Mover para Cima</button>
-    <button id='mover-baixo'>Mover para Baixo</button>
-    <button id='remover-selecionado'>Remover Tarefa</button>
-  </section>
+    <section id='useful-buttons'> 
+      <button id='apaga-tudo'><i class="fa-solid fa-xmark"></i></button>
+      <button id='remover-finalizados'>Remover Finalizados</button>
+      <button id='salvar-tarefas'>Salvar Lista</button>
+      <button id='mover-cima'>Mover para Cima</button>
+      <button id='mover-baixo'>Mover para Baixo</button>
+      <button id='remover-selecionado'>Remover Tarefa</button>
+    </section>
+  </main>
   <script src="script.js"></script>
+  <script src="https://kit.fontawesome.com/41adc6c0cf.js" crossorigin="anonymous"></script>
 </body>
 </html>

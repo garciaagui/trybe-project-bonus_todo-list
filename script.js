@@ -4,6 +4,8 @@ const taskList = document.querySelector('#lista-tarefas');
 const clearListBtn = document.querySelector('#apaga-tudo');
 const clearCompletedTasksBtn = document.querySelector('#remover-finalizados');
 const saveListBtn = document.querySelector('#salvar-tarefas');
+const moveUpBtn = document.querySelector('#mover-cima');
+const moveDownBtn = document.querySelector('#mover-baixo');
 
 function selectTask(event) {
   const hadClassSelected = document.querySelector('.selected');
@@ -75,8 +77,50 @@ function getSavedListItems() {
   }
 }
 
+function moveUpItem() {
+  const createdTasks = document.getElementsByClassName('task');
+  const selectedTask = document.querySelector('.selected');
+  if (!selectedTask) {
+    window.alert('Nenhum item selecionado');
+  } else if (selectedTask === createdTasks[0]) {
+    window.alert('O item selecionado é o primeiro da lista');
+  } else {
+    const selectedTaskContent = selectedTask.innerHTML;
+    const selectedTaskClasses = selectedTask.className;
+    const previousTask = selectedTask.previousElementSibling;
+    const previousTaskContent = previousTask.innerHTML;
+    const previousTaskClasses = previousTask.className;
+    selectedTask.innerHTML = previousTaskContent;
+    selectedTask.className = previousTaskClasses;
+    previousTask.innerHTML = selectedTaskContent;
+    previousTask.className = selectedTaskClasses;
+  }
+}
+
+function moveDownItem() {
+  const createdTasks = document.getElementsByClassName('task');
+  const selectedTask = document.querySelector('.selected');
+  if (!selectedTask) {
+    window.alert('Nenhum item selecionado');
+  } else if (selectedTask === createdTasks[createdTasks.length - 1]) {
+    window.alert('O item selecionado é o último da lista');
+  } else {
+    const selectedTaskContent = selectedTask.innerHTML;
+    const selectedTaskClasses = selectedTask.className;
+    const nextTask = selectedTask.nextElementSibling;
+    const previousTaskContent = nextTask.innerHTML;
+    const previousTaskClasses = nextTask.className;
+    selectedTask.innerHTML = previousTaskContent;
+    selectedTask.className = previousTaskClasses;
+    nextTask.innerHTML = selectedTaskContent;
+    nextTask.className = selectedTaskClasses;
+  }
+}
+
 window.addEventListener('load', getSavedListItems);
 addTaskBtn.addEventListener('click', addNewTask);
 clearListBtn.addEventListener('click', clearList);
 clearCompletedTasksBtn.addEventListener('click', clearCompletedTasks);
 saveListBtn.addEventListener('click', saveListItems);
+moveUpBtn.addEventListener('click', moveUpItem);
+moveDownBtn.addEventListener('click', moveDownItem);

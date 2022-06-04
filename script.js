@@ -3,6 +3,7 @@ const addTaskBtn = document.querySelector('#criar-tarefa');
 const taskList = document.querySelector('#lista-tarefas');
 const clearListBtn = document.querySelector('#apaga-tudo');
 const clearCompletedTasksBtn = document.querySelector('#remover-finalizados');
+const saveListBtn = document.querySelector('#salvar-tarefas');
 
 function selectTask(event) {
   const hadClassSelected = document.querySelector('.selected');
@@ -48,6 +49,34 @@ function clearCompletedTasks() {
   }
 }
 
+function saveListItems() {
+  localStorage.clear();
+  const createdTasks = document.getElementsByClassName('task');
+  for (let i = 0; i < createdTasks.length; i += 1) {
+    const actualTask = createdTasks[i];
+    const actualTaskInfo = [actualTask.innerHTML, actualTask.className];
+    localStorage.setItem(`content${i}`, JSON.stringify(actualTaskInfo));
+  }
+}
+
+function getSavedListItems() {
+  if (localStorage.length > 0) {
+    for (let i = 0; i < localStorage.length; i += 1) {
+      const savedTaskInfo = JSON.parse(localStorage.getItem(`content${i}`));
+      const savedTaskContent = savedTaskInfo[0];
+      const savedTaskClass = savedTaskInfo[1];
+      const newTask = document.createElement('li');
+      newTask.innerHTML = savedTaskContent;
+      newTask.className = savedTaskClass;
+      taskList.appendChild(newTask);
+      newTask.addEventListener('click', selectTask);
+      newTask.addEventListener('dblclick', completeTask);
+    }
+  }
+}
+
+window.addEventListener('load', getSavedListItems);
 addTaskBtn.addEventListener('click', addNewTask);
 clearListBtn.addEventListener('click', clearList);
 clearCompletedTasksBtn.addEventListener('click', clearCompletedTasks);
+saveListBtn.addEventListener('click', saveListItems);

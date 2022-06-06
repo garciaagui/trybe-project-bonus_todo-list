@@ -1,3 +1,4 @@
+// Declaração das Variáveis;
 const addTaskInput = document.querySelector('#texto-tarefa');
 const addTaskBtn = document.querySelector('#criar-tarefa');
 const taskList = document.querySelector('#lista-tarefas');
@@ -8,28 +9,27 @@ const moveUpBtn = document.querySelector('#mover-cima');
 const moveDownBtn = document.querySelector('#mover-baixo');
 const removeSelectedTaskBtn = document.querySelector('#remover-selecionado');
 
-function selectTask(event) {
-  const hadClassSelected = document.querySelector('.selected');
-  if (hadClassSelected) {
-    hadClassSelected.classList.remove('selected');
+// Definição das Funções;
+function selectTask(e) {
+  const lastSelected = document.querySelector('.selected');
+  if (lastSelected) {
+    lastSelected.classList.remove('selected');
   }
-  const auxiliar = event;
-  auxiliar.target.classList.add('selected');
+  e.target.classList.add('selected');
 }
 
-function completeTask(event) {
-  const auxiliar = event;
-  if (auxiliar.target.classList.contains('completed')) {
-    auxiliar.target.classList.remove('completed');
+function completeTask(e) {
+  if (e.target.classList.contains('completed')) {
+    e.target.classList.remove('completed');
   } else {
-    auxiliar.target.classList.add('completed');
+    e.target.classList.add('completed');
   }
 }
 
-function addNewTask() {
+function addTask(content, className) {
   const newTask = document.createElement('li');
-  newTask.innerHTML = addTaskInput.value;
-  newTask.setAttribute('class', 'task');
+  newTask.innerHTML = content;
+  newTask.setAttribute('class', className);
   taskList.appendChild(newTask);
   addTaskInput.value = '';
   newTask.addEventListener('click', selectTask);
@@ -68,17 +68,26 @@ function getSavedListItems() {
       const savedTaskInfo = JSON.parse(localStorage.getItem(`content${i}`));
       const savedTaskContent = savedTaskInfo[0];
       const savedTaskClass = savedTaskInfo[1];
-      const newTask = document.createElement('li');
-      newTask.innerHTML = savedTaskContent;
-      newTask.className = savedTaskClass;
-      taskList.appendChild(newTask);
-      newTask.addEventListener('click', selectTask);
-      newTask.addEventListener('dblclick', completeTask);
+      addTask(savedTaskContent, savedTaskClass);
     }
   }
 }
 
-function moveUpItem() {
+function switchTasks(selectedTask, taskToSwitch) {
+  const x = selectedTask;
+  const y = taskToSwitch;
+  const xContent = x.innerHTML;
+  const xClasses = x.className;
+  const yContent = y.innerHTML;
+  const yClasses = y.className;
+
+  x.innerHTML = yContent;
+  x.className = yClasses;
+  y.innerHTML = xContent;
+  y.className = xClasses;
+}
+
+function moveUpSelectedTask() {
   const createdTasks = document.getElementsByClassName('task');
   const selectedTask = document.querySelector('.selected');
   if (!selectedTask) {
@@ -86,19 +95,12 @@ function moveUpItem() {
   } else if (selectedTask === createdTasks[0]) {
     window.alert('O item selecionado é o primeiro da lista');
   } else {
-    const selectedTaskContent = selectedTask.innerHTML;
-    const selectedTaskClasses = selectedTask.className;
     const previousTask = selectedTask.previousElementSibling;
-    const previousTaskContent = previousTask.innerHTML;
-    const previousTaskClasses = previousTask.className;
-    selectedTask.innerHTML = previousTaskContent;
-    selectedTask.className = previousTaskClasses;
-    previousTask.innerHTML = selectedTaskContent;
-    previousTask.className = selectedTaskClasses;
+    switchTasks(selectedTask, previousTask);
   }
 }
 
-function moveDownItem() {
+function moveDownSelectedTask() {
   const createdTasks = document.getElementsByClassName('task');
   const selectedTask = document.querySelector('.selected');
   if (!selectedTask) {
@@ -106,15 +108,8 @@ function moveDownItem() {
   } else if (selectedTask === createdTasks[createdTasks.length - 1]) {
     window.alert('O item selecionado é o último da lista');
   } else {
-    const selectedTaskContent = selectedTask.innerHTML;
-    const selectedTaskClasses = selectedTask.className;
     const nextTask = selectedTask.nextElementSibling;
-    const nextTaskContent = nextTask.innerHTML;
-    const nextTaskClasses = nextTask.className;
-    selectedTask.innerHTML = nextTaskContent;
-    selectedTask.className = nextTaskClasses;
-    nextTask.innerHTML = selectedTaskContent;
-    nextTask.className = selectedTaskClasses;
+    switchTasks(selectedTask, nextTask);
   }
 }
 
@@ -127,11 +122,14 @@ function removeSelectedTask() {
   }
 }
 
+// Ativação das Funções;
 window.addEventListener('load', getSavedListItems);
-addTaskBtn.addEventListener('click', addNewTask);
+addTaskBtn.addEventListener('click', () => {
+  addTask(addTaskInput.value, 'task');
+});
 clearListBtn.addEventListener('click', clearList);
 clearCompletedTasksBtn.addEventListener('click', clearCompletedTasks);
 saveListBtn.addEventListener('click', saveListItems);
-moveUpBtn.addEventListener('click', moveUpItem);
-moveDownBtn.addEventListener('click', moveDownItem);
+moveUpBtn.addEventListener('click', moveUpSelectedTask);
+moveDownBtn.addEventListener('click', moveDownSelectedTask);
 removeSelectedTaskBtn.addEventListener('click', removeSelectedTask);

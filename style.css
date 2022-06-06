@@ -1,20 +1,20 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   font-size: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  width: 70%;
+  background-color: rgb(59 , 193 , 139);
   margin-left: auto;
   margin-right: auto;
-  background-color: rgb(59 , 193 , 139);
+  width: 70%;
 }
 
 header {
-  margin-top: 100px;
   background-color: white;
+  margin-top: 100px;
   padding: 20px;
 }
 
@@ -24,9 +24,9 @@ header h1 {
 }
 
 #funcionamento {
-  font-weight: 100;
-  font-style: italic;
   color: rgb(82 , 82 , 82);
+  font-style: italic;
+  font-weight: 100;
 }
 
 main {
@@ -38,14 +38,23 @@ main {
   margin: 10px 0 20px;
 }
 
-#useful-buttons button {
-  margin-right: 10px;
+.task {
+  cursor: pointer;
 }
 
 .selected {
   background-color: gray;
+  font-weight: 600;
 }
 
 .completed {
   text-decoration: line-through solid black;
+}
+
+#lista-tarefas {
+  margin-bottom: 50px;
+}
+
+#useful-buttons button {
+  margin-right: 10px;
 }

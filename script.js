@@ -125,7 +125,11 @@ function removeSelectedTask() {
 // Ativação das Funções;
 window.addEventListener('load', getSavedListItems);
 addTaskBtn.addEventListener('click', () => {
-  addTask(addTaskInput.value, 'task');
+  if (addTaskInput.value === '') {
+    window.alert('Campo vazio. Por gentileza, insira uma breve descrição da tarefa');
+  } else {
+    addTask(addTaskInput.value, 'task');
+  }
 });
 clearListBtn.addEventListener('click', clearList);
 clearCompletedTasksBtn.addEventListener('click', clearCompletedTasks);

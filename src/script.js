@@ -10,6 +10,20 @@ const moveDownBtn = document.querySelector('#btn-move-down-selected');
 const removeSelectedTaskBtn = document.querySelector('#btn-remove-selected');
 
 // Definição das Funções;
+function checkTaskListContent() {
+  const noTaskMessage = document.querySelector('#no-task-message');
+
+  if (!noTaskMessage && !taskList.childNodes.length) {
+    const noTaskMessage = document.createElement('p');
+    noTaskMessage.innerHTML = 'Nenhuma tarefa adicionada...';
+    noTaskMessage.setAttribute('id', 'no-task-message');
+    taskList.appendChild(noTaskMessage);
+  }
+
+  else if (taskList.childNodes.length) {
+    taskList.removeChild(noTaskMessage);
+  }
+}
 function selectTask(e) {
   const lastSelected = document.querySelector('.selected');
   if (lastSelected) {
@@ -34,12 +48,14 @@ function addTask(content, className) {
   addTaskInput.value = '';
   newTask.addEventListener('click', selectTask);
   newTask.addEventListener('dblclick', completeTask);
+  checkTaskListContent();
 }
 
 function clearList() {
   while (taskList.firstChild) {
     taskList.removeChild(taskList.firstChild);
   }
+  checkTaskListContent();
 }
 
 function clearCompletedTasks() {
@@ -50,6 +66,7 @@ function clearCompletedTasks() {
       i -= 1;
     }
   }
+  checkTaskListContent();
 }
 
 function saveListItems() {
@@ -120,10 +137,14 @@ function removeSelectedTask() {
       taskList.removeChild(createdTasks[i]);
     }
   }
+  checkTaskListContent();
 }
 
 // Ativação das Funções;
-window.addEventListener('load', getSavedListItems);
+window.addEventListener('load', () => {
+  getSavedListItems();
+  checkTaskListContent();
+});
 addTaskBtn.addEventListener('click', () => {
   if (addTaskInput.value === '') {
     window.alert('Campo vazio. Por gentileza, insira uma breve descrição da tarefa');

@@ -20,7 +20,7 @@ function checkTaskListContent() {
     taskList.appendChild(noTaskMessage);
   }
 
-  else if (taskList.childNodes.length) {
+  else if (noTaskMessage) {
     taskList.removeChild(noTaskMessage);
   }
 }
@@ -143,7 +143,7 @@ function removeSelectedTask() {
 // Ativação das Funções;
 window.addEventListener('load', () => {
   getSavedListItems();
-  checkTaskListContent();
+  checkTaskListContent(); 
 });
 addTaskBtn.addEventListener('click', () => {
   if (addTaskInput.value === '') {

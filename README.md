@@ -25,16 +25,17 @@ Este projeto se trata da criação de uma lista de tarefas. A pessoa usuária po
 <p align="right"><a href="#readme-top">Voltar ao topo</a></p>
 
 ## Tecnologias
-[![HTML5][html5-badge]][html5-url] [![CSS3][css3-badge]][css3-url] [![JavaScript][javascript-badge]][javascript-url] [![Bootstrap][bootstrap-badge]][bootstrap-url]
+[![HTML5][html5-badge]][html5-url] [![CSS3][css3-badge]][css3-url] [![JavaScript][javascript-badge]][javascript-url] [![Bootstrap][bootstrap-badge]][bootstrap-url] [![Font Awesome][fontawesome-badge]][fontawesome-url]
 
 <p align="right"><a href="#readme-top">Voltar ao topo</a></p>
 
 ## Habilidades
 <ul>
-  <li>Integração de HTML, CSS e JavaScript para criação de uma aplicação.</li>
-  <li>Manipulação de elementos HTML com JavaScript através dos seletores do DOM (Document Object Model).</li>
+  <li>Integração de HTML5, CSS3 e JavaScript para criação de uma aplicação.</li>
+  <li>Manipulação de elementos HTML5 com JavaScript através dos seletores do DOM (Document Object Model).</li>
   <li>Utilização de eventos do JavaScript para executar funções de acordo com as interações da pessoa usuária.</li>
-  <li>Utilização do Local Storage para salvar dados nos browsers.</li>
+  <li>Utilização do Local Storage para salvar dados nos browsers;</li>
+  <li>Aplicação dos frameworks Bootstrap e Font Awesome.</li>
 </ul>
 
 <p align="right"><a href="#readme-top">Voltar ao topo</a></p>
@@ -87,6 +88,8 @@ Guilherme Garcia - garciaguig@gmail.com
 [javascript-badge]: https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E
 [bootstrap-url]: https://getbootstrap.com/
 [bootstrap-badge]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
+[fontawesome-url]: https://fontawesome.com/
+[fontawesome-badge]: https://img.shields.io/badge/Font_Awesome-339AF0?style=for-the-badge&logo=fontawesome&logoColor=white
 [linkedin-badge]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
 [linkedin-url]: https://www.linkedin.com/in/garciaagui/
 [github-badge]: https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white

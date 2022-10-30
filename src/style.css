@@ -42,7 +42,7 @@ main {
 }
 
 #btn-create-task {
-  margin: 10px 0 20px;
+  margin-top: 10px;
 }
 
 .task {
@@ -58,12 +58,15 @@ main {
   text-decoration: line-through solid black;
 }
 
+#create-task-section {
+  margin-bottom: 30px;
+}
+
 #task-list {
   margin-bottom: 50px;
 }
 
 #no-task-message {
-  margin: 0;
   font-style: italic;
 }
 

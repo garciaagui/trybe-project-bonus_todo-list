@@ -1,13 +1,13 @@
 // Declaração das Variáveis;
-const addTaskInput = document.querySelector('#texto-tarefa');
-const addTaskBtn = document.querySelector('#criar-tarefa');
-const taskList = document.querySelector('#lista-tarefas');
-const clearListBtn = document.querySelector('#apaga-tudo');
-const clearCompletedTasksBtn = document.querySelector('#remover-finalizados');
-const saveListBtn = document.querySelector('#salvar-tarefas');
-const moveUpBtn = document.querySelector('#mover-cima');
-const moveDownBtn = document.querySelector('#mover-baixo');
-const removeSelectedTaskBtn = document.querySelector('#remover-selecionado');
+const addTaskInput = document.querySelector('#task-text');
+const addTaskBtn = document.querySelector('#btn-create-task');
+const taskList = document.querySelector('#task-list');
+const clearListBtn = document.querySelector('#btn-remove-list');
+const clearCompletedTasksBtn = document.querySelector('#btn-remove-completed');
+const saveListBtn = document.querySelector('#btn-save-list');
+const moveUpBtn = document.querySelector('#btn-move-up-selected');
+const moveDownBtn = document.querySelector('#btn-move-down-selected');
+const removeSelectedTaskBtn = document.querySelector('#btn-remove-selected');
 
 // Definição das Funções;
 function selectTask(e) {

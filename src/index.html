@@ -19,36 +19,27 @@
       <li>Clique <span class="bold">duas vezes</span> em um item para marcá-lo como concluído.</li>
       <li>Utilize os botões para manipular a lista.</li>
     </ul>
-    <!-- <p id='primeiro-funcionamento'>
-      Clique <span class="bold">uma vez</span> em um item para selecioná-lo
-    </p>
-    <p id='funcionamento'>
-      Clique <span class="bold">duas vezes</span> em um item para marcá-lo como completo
-    </p> -->
   </header>
   <main>
     <section>
-      <label for='texto-tarefa' class="form-label">Adicione um item à lista:</label>
-      <input type='text' name="" id='texto-tarefa' class="form-control">
-      <button id='criar-tarefa' class="btn btn-primary">Adicionar</button>
+      <label for='task-text' class="form-label">Adicione um item à lista:</label>
+      <input type='text' name="" id='task-text' class="form-control">
+      <button id='btn-create-task' class="btn btn-primary">Adicionar</button>
     </section>
-
     <h2>Tarefas Listadas</h2>
-    <ol id='lista-tarefas'></ol>
-
+    <ol id='task-list'></ol>
     <hr/>
-
     <section id='tasks-buttons'>
       <h3>Controle de Tarefas</h3>
-      <button id='remover-selecionado' class="btn btn-danger">Remover Selecionada</i></button>
-      <button id='mover-cima' class="btn btn-warning"><i class="fa-solid fa-circle-up"></i> Subir Selecionada</button>
-      <button id='mover-baixo' class="btn btn-warning"><i class="fa-solid fa-circle-down"></i> Descer Selecionada</button>
-      <button id='remover-finalizados' class="btn btn-primary">Limpar Concluídas</button>
+      <button id='btn-remove-selected' class="btn btn-danger">Remover Selecionada</i></button>
+      <button id='btn-move-up-selected' class="btn btn-warning"><i class="fa-solid fa-circle-up"></i> Subir Selecionada</button>
+      <button id='btn-move-down-selected' class="btn btn-warning"><i class="fa-solid fa-circle-down"></i> Descer Selecionada</button>
+      <button id='btn-remove-completed' class="btn btn-primary">Limpar Concluídas</button>
     </section>
     <section id='list-buttons'>
       <h3>Controle de Lista</h3>
-      <button id='apaga-tudo' class="btn btn-danger">Apagar Lista</i></button>
-      <button id='salvar-tarefas' class="btn btn-success">Salvar Lista</button>
+      <button id='btn-remove-list' class="btn btn-danger">Apagar Lista</i></button>
+      <button id='btn-save-list' class="btn btn-success">Salvar Lista</button>
     </section>
   </main>
   <script src="script.js"></script>

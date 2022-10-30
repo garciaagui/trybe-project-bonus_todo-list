@@ -41,7 +41,7 @@ main {
   padding: 0 25px 20px;
 }
 
-#criar-tarefa {
+#btn-create-task {
   margin: 10px 0 20px;
 }
 
@@ -58,7 +58,7 @@ main {
   text-decoration: line-through solid black;
 }
 
-#lista-tarefas {
+#task-list {
   margin-bottom: 50px;
 }
 

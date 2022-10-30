@@ -20,7 +20,7 @@ Projeto **bônus** do curso de Desenvolvimento Web da [Trybe](https://www.betryb
 
 Este projeto se trata da criação de uma lista de tarefas. A pessoa usuária poderá listar suas tarefas e terá algumas funcionalidades à disposição para facilitar o controle de suas atividades.
 
-![Project Todo List][project-gif]
+![Project Todo List][project-demo]
 
 <p align="right"><a href="#readme-top">Voltar ao topo</a></p>
 
@@ -78,7 +78,7 @@ Guilherme Garcia - garciaguig@gmail.com
 <p align="right"><a href="#readme-top">Voltar ao topo</a></p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[project-gif]: /project-gif.gif
+[project-demo]: /project-demo.gif
 [html5-url]: https://developer.mozilla.org/en-US/docs/Web/HTML
 [html5-badge]: https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
 [css3-url]: https://developer.mozilla.org/en-US/docs/Web/CSS

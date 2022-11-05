@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
-  <title>Projeto Lista de Tarefas</title>
+  <title>Todo List</title>
+  <link rel="icon" href="./images/i.png">
 </head>
+
 <body>
   <header>
     <h1>
@@ -28,13 +32,16 @@
     </section>
     <h2>Tarefas Listadas</h2>
     <ol id='task-list'></ol>
-    <hr/>
+    <hr />
     <section id='tasks-buttons'>
       <h3>Controle de Tarefas</h3>
       <button id='btn-remove-selected' class="btn btn-danger">Remover Selecionada</i></button>
-      <button id='btn-move-up-selected' class="btn btn-warning"><i class="fa-solid fa-circle-up"></i> Subir Selecionada</button>
-      <button id='btn-move-down-selected' class="btn btn-warning"><i class="fa-solid fa-circle-down"></i> Descer Selecionada</button>
-      <button id='btn-remove-completed' class="btn btn-primary"><i class="fa-solid fa-check"></i> Limpar Concluídas</button>
+      <button id='btn-move-up-selected' class="btn btn-warning"><i class="fa-solid fa-circle-up"></i> Subir
+        Selecionada</button>
+      <button id='btn-move-down-selected' class="btn btn-warning"><i class="fa-solid fa-circle-down"></i> Descer
+        Selecionada</button>
+      <button id='btn-remove-completed' class="btn btn-primary"><i class="fa-solid fa-check"></i> Limpar
+        Concluídas</button>
     </section>
     <section id='list-buttons'>
       <h3>Controle de Lista</h3>
@@ -45,4 +52,5 @@
   <script src="script.js"></script>
   <script src="https://kit.fontawesome.com/41adc6c0cf.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
